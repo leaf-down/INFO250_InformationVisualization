@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Group 15" />
+  <meta name="dcterms.date" content="2025-12-18" />
+  <title>INFO 250 Project 2: Making Effective Visualization Using Critical Thinking</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">INFO 250 Project 2: Making Effective Visualization
+Using Critical Thinking</h1>
+<p class="author">Group 15</p>
+<p class="date">2025-12-18</p>
+</header>
+<style>
+body {
+  max-width: 1300px;
+  margin: auto;
+}
+</style>
+<h1 id="introduction">1. Introduction</h1>
+<p>As societies across Europe continue to <strong>age</strong>,
+understanding how causes of death change over time has become
+increasingly important. Such information supports public health policy,
+healthcare planning, and discussions about the challenges of an aging
+population. However, data alone is not enough—the way information is
+<strong>visualized</strong> strongly influences how trends are
+understood and interpreted.</p>
+<p>Statistical agencies such as <strong>Eurostat</strong> provide
+reliable data with accompanying visualizations, but even accurate charts
+can be ineffective if they create unnecessary cognitive burden. Poor
+design may cause key patterns to be misinterpreted or overlooked.</p>
+<p>This article examines a <strong>Eurostat chart</strong> showing
+changes in causes of death among women aged <strong>65 and over in the
+EU (2012–2022)</strong>. By identifying the limitations of the original
+static visualization, we demonstrate how design choices affect
+comprehension and present an <strong>interactive redesign</strong> that
+improves clarity and accessibility while preserving data integrity.</p>
+<hr />
+<h1 id="context-and-visualization-selection">2. Context and
+Visualization Selection</h1>
+<p>The visualization analyzed in this article originates from
+<strong>Eurostat</strong>, the statistical office of the European Union,
+and presents data on <strong>causes of death among women aged 65 years
+or over</strong> between <strong>2012 and 2022</strong>. The data are
+expressed as an <strong>index based on the standardized death rate per
+100,000 inhabitants</strong>, with the year <strong>2012 set to a
+baseline value of 100</strong>. This normalization allows readers to
+focus on <strong>relative changes over time</strong> rather than
+absolute mortality levels.</p>
+<p>The topic of this visualization is <strong>socially and politically
+significant</strong>. As life expectancy increases across the European
+Union, the health conditions affecting older populations become a
+central concern for <strong>policymakers, healthcare systems, and the
+public</strong>. Understanding which causes of death are becoming more
+or less prevalent over time can inform <strong>resource allocation,
+preventive strategies, and long-term healthcare planning</strong>,
+making clear visualization of such trends essential for public
+understanding.</p>
+<p>This particular visualization was selected because it represents a
+<strong>common scenario in public data communication</strong>: an
+authoritative dataset paired with a <strong>conventional but densely
+packed static line chart</strong>. At first glance, the chart appears
+comprehensive and informative. However, closer inspection reveals
+<strong>design choices that make trends difficult to interpret</strong>,
+especially for <strong>non-expert readers</strong>. The complexity of
+the visual encoding and the lack of direct access to exact values
+<strong>limit the chart’s effectiveness</strong>.</p>
+<p>By choosing this example, the article aims to illustrate how even
+<strong>credible official visualizations</strong> can benefit from
+<strong>redesign</strong>. The goal is not to criticize the data source,
+but to demonstrate how <strong>thoughtful visualization design</strong>
+can enhance understanding and make important <strong>public health
+stories more accessible</strong> to a broader audience.</p>
+<hr />
+<h1 id="original-visualization">3. Original Visualization</h1>
+<figure>
+<img src="original_chart.png"
+alt="Figure 1: Causes of death among women aged 65 years or over in the European Union, 2012–2022. (Source: Eurostat)" />
+<figcaption aria-hidden="true">Figure 1: Causes of death among women
+aged 65 years or over in the European Union, 2012–2022.<br />
+(Source: Eurostat)</figcaption>
+</figure>
+<p>The original visualization is a <strong>static multi-line
+chart</strong> published by <strong>Eurostat</strong>, titled
+<em>“Causes of death among women aged 65 years or over, EU,
+2012–22.”</em> It displays <strong>indexed trends for multiple causes of
+death</strong> across a <strong>ten-year period</strong>, with the
+horizontal axis representing <strong>time</strong> and the vertical axis
+showing an <strong>index based on the standardized death rate</strong>,
+where <strong>2012 is set to 100</strong>, allowing readers to focus on
+<strong>relative changes over time</strong>.</p>
+<p>Each cause of death is represented by a <strong>distinct colored
+line</strong> with <strong>point markers</strong> indicating yearly
+observations. A <strong>legend listing all categories</strong> is
+positioned on the <strong>right-hand side</strong> of the chart. The
+visualization is designed to show how <strong>mortality patterns among
+older women in the EU</strong> have changed over time and to
+<strong>compare trends across causes of death</strong> within a
+<strong>single consolidated view</strong>.</p>
+<p>By presenting all categories within <strong>one figure</strong>, the
+chart aims to provide a <strong>comprehensive overview</strong> of
+long-term developments in mortality. Readers are expected to
+<strong>follow individual lines over time</strong> and use the
+<strong>legend</strong> to associate each line with its cause of death,
+thereby understanding <strong>how multiple trends coexist within the
+same time frame</strong>.</p>
+<hr />
+<h1 id="analysis-of-the-original-visualization">4. Analysis of the
+Original Visualization</h1>
+<p>At first glance, the original Eurostat visualization appears
+<strong>comprehensive and authoritative</strong>, presenting a large
+amount of information within a single figure. By indexing the
+standardized death rate to a <strong>common baseline year</strong>, the
+chart allows readers to focus on <strong>relative changes over
+time</strong> rather than absolute values. The use of <strong>line
+position on a shared vertical scale</strong> is an effective visual
+encoding and enables <strong>high-level comparison of trends</strong>
+across different causes of death.</p>
+<p>Despite these strengths, several <strong>design choices make the
+underlying story difficult to follow</strong>. The chart relies on a
+<strong>detached legend</strong> placed on the right-hand side, listing
+all causes of death in an order that does not clearly correspond to the
+visual ordering of the lines. As a result, readers must repeatedly shift
+their attention between the legend and the chart, creating a
+<strong>split-attention effect</strong> and increasing <strong>cognitive
+load</strong>, especially given the number of lines displayed.</p>
+<p>In addition, the visualization is <strong>entirely static</strong>,
+which limits access to <strong>precise information</strong>. Individual
+data points are marked but not labeled, and readers cannot retrieve
+<strong>exact values</strong> for specific years without visual
+estimation. While this supports recognition of general trends, it makes
+<strong>detailed comparison</strong> difficult, particularly for
+<strong>non-expert audiences</strong>.</p>
+<p>The <strong>density of information</strong> further contributes to
+the challenge. Multiple lines with <strong>similar colors and
+overlapping trajectories</strong> compete for attention, requiring
+sustained effort to track individual causes of death. Although the chart
+maintains a relatively high <strong>data-ink ratio</strong>, the lack of
+<strong>direct labeling and interaction</strong> places additional
+demands on the reader’s <strong>working memory</strong>, hindering
+efficient comprehension.</p>
+<p>Overall, the original visualization provides a <strong>broad overview
+of mortality trends</strong> among older women in the European Union,
+but its <strong>static design</strong> and reliance on a
+<strong>detached legend</strong> limit effective storytelling. The
+information is present, yet the <strong>effort required to extract
+insights</strong> may reduce reader engagement and weaken the
+visualization’s ability to <strong>communicate its message
+clearly</strong>.</p>
+<hr />
+<h1 id="replicating-the-original-visualization">5. Replicating the
+Original Visualization</h1>
+<figure>
+<img src="replicated_chart.png"
+alt="Figure 2: Replication of the original Eurostat visualization using the same data and layout." />
+<figcaption aria-hidden="true">Figure 2: Replication of the original
+Eurostat visualization using the same data and layout.</figcaption>
+</figure>
+<p>To verify our understanding of the original Eurostat chart, we first
+replicated the static visualization using the same dataset and visual
+encoding. The replication was implemented in Python with pandas for data
+processing and matplotlib for plotting, applying the same index
+transformation in which the year 2012 is set to 100, thereby preserving
+the original visual and data structure.</p>
+<hr />
+<h1 id="design-goals-and-proposed-improvements">6. Design Goals and
+Proposed Improvements</h1>
+<p>Based on the analysis of the original visualization, the primary goal
+of the redesign was to make the <strong>underlying trends easier to
+follow</strong> and the data more accessible to a general audience.
+Rather than changing the dataset itself, the redesign focuses on
+improving how the information is presented, emphasizing clarity over
+visual complexity.</p>
+<p>The first design goal was to <strong>reduce cognitive load</strong>
+caused by the detached legend and dense visual layout. To achieve this,
+the redesign replaces the traditional legend with <strong>direct
+labeling</strong>, ensuring that each line is clearly associated with
+its corresponding cause of death. By positioning labels directly
+alongside the visual elements, the redesign minimizes the
+split-attention effect and supports <strong>immediate visual
+association</strong>.</p>
+<p>A second goal was to improve temporal understanding. In the original
+static chart, all trends are presented simultaneously, which can be
+overwhelming. The redesigned visualization introduces
+<strong>animation</strong> to guide attention along the time axis,
+allowing trends to emerge gradually and reinforcing a clearer sense of
+progression over time.</p>
+<p>Finally, the redesign seeks to improve data accessibility and support
+<strong>precise comparison</strong>. To address the limitation of
+unlabeled data points, <strong>interactive features</strong> are
+introduced that allow users to explore exact values on demand. This
+balances overview and detail while preserving a clean visual
+appearance.</p>
+<p>Together, these design goals emphasize <strong>clarity, readability,
+and accessibility</strong>. By combining <strong>direct labeling,
+animation, and interactivity</strong>, the proposed improvements aim to
+communicate the data story more effectively and enable a more intuitive
+reading experience.</p>
+<hr />
+<h1 id="implementation-interactive-redesign">7. Implementation:
+Interactive Redesign</h1>
+<p>The redesigned visualization transforms the original static chart
+into a dynamic and interactive experience implemented as an
+<strong>HTML-based visualization</strong>. When the page is loaded, all
+lines begin at the initial year and gradually extend forward along the
+time axis. This <strong>animated progression</strong> guides the
+viewer’s attention chronologically and makes it easier to follow how
+each cause of death evolves over time, supporting a more guided temporal
+reading process.</p>
+<p>To address the limitations of the <strong>detached legend</strong>,
+each line is accompanied by a <strong>moving label</strong> that extends
+together with the line. These labels display the <strong>cause of
+death</strong> and the <strong>current index value</strong> at the end
+point of the line. Once the animation is complete, the labels remain at
+the end of their respective lines, creating a clear and direct
+association between visual elements and their meanings and enabling
+<strong>immediate identification</strong> of trends.</p>
+<p><strong>Interactivity</strong> further enhances data accessibility.
+As users move the mouse across the chart, a <strong>tooltip</strong>
+appears showing the values of all causes of death at the selected year.
+This enables <strong>precise comparison across categories</strong> while
+preserving a clean visual layout, allowing users to move smoothly
+between overview and detail.</p>
+<p>Overall, the interactive redesign preserves data integrity while
+improving <strong>clarity and usability</strong>. Through
+<strong>animation, direct labeling, and on-demand interaction</strong>,
+the visualization becomes a more engaging and intuitive representation,
+making changes in mortality trends easier to understand through active
+reader engagement.</p>
+<!-- Interactive visualization (HTML version only) -->
+<iframe src="eurostat_interactive.html" width="100%" height="725" style="border:none;">
+</iframe>
+<p>Figure 3: Interactive redesign of the Eurostat mortality
+visualization.<br />
+The figure shows the same dataset as Figure 1, enhanced with animation,
+direct labeling, and interactive tooltips.<br />
+<em>Note:</em><br />
+<em>Full interactivity is available in the HTML version of this
+article.</em><br />
+<em>For a better interactive experience, please adjust the reader
+interface to the appropriate size when using the interactive
+charts.</em></p>
+<hr />
+<h1 id="comparison-before-vs-after">8. Comparison: Before vs After</h1>
+<p>Comparing the original Eurostat visualization with the
+<strong>redesigned interactive version</strong> highlights how
+<strong>design choices influence data understanding</strong>. Although
+both visualizations rely on the same dataset, their effectiveness in
+communicating trends differs substantially, demonstrating the impact of
+presentation on comprehension.</p>
+<p>In the original chart, all causes of death are shown simultaneously
+in a static layout, with a <strong>detached legend</strong> positioned
+to the side. Readers must repeatedly shift attention between the legend
+and the lines to identify trends. In contrast, the redesigned
+visualization uses <strong>direct labeling</strong>, allowing each line
+to be <strong>immediately associated</strong> with its category and
+<strong>reducing cognitive effort</strong>.</p>
+<p>The <strong>representation of time</strong> also differs markedly.
+The original visualization presents the entire time span at once, which
+can be overwhelming and obscure year-to-year development. The redesigned
+version introduces <strong>animation</strong> that gradually reveals
+trends, guiding attention along the <strong>time axis</strong> and
+supporting a clearer understanding of temporal change.</p>
+<p><strong>Access to precise data</strong> is another key distinction.
+In the static chart, values must be visually estimated, limiting
+detailed comparison. The interactive redesign allows users to retrieve
+<strong>exact values on demand</strong>, supporting both
+<strong>overview and detailed analysis</strong> without adding visual
+clutter.</p>
+<p>Overall, this comparison shows that the redesign does not change the
+data itself, but improves how easily the message can be understood. By
+reducing <strong>split attention</strong>, guiding visual focus, and
+enabling <strong>interaction</strong>, the redesigned visualization
+communicates the same story more <strong>clearly and
+effectively</strong>, resulting in a more transparent and interpretable
+data narrative.</p>
+<hr />
+<h1 id="reflection-and-conclusion">9. Reflection and Conclusion</h1>
+<p>This case study demonstrates that effective data visualization is not
+solely about presenting accurate data, but about <strong>enabling
+understanding</strong>. The original Eurostat chart was based on
+reliable and meaningful data, yet its <strong>static design</strong> and
+reliance on a detached legend made the underlying trends difficult to
+follow. Through analysis and redesign, it became clear that small design
+decisions can have a substantial impact on how a data story is
+perceived.</p>
+<p>The redesign process highlights the importance of revision in
+information visualization. By focusing on <strong>reducing cognitive
+load</strong>, <strong>avoiding split attention</strong>, and guiding
+reader focus through animation and interactivity, the improved
+visualization makes the same data more accessible without altering its
+content. These changes show how visualization design can bridge the gap
+between complex datasets and non-expert audiences.</p>
+<p>More broadly, this exercise underscores the <strong>responsibility of
+visualization designers</strong>, especially when working with public
+health data. Visualizations shape how evidence is interpreted and can
+influence public discourse and decision-making. Clear and thoughtful
+design is therefore a critical component of responsible data
+communication, not merely an aesthetic choice.</p>
+<p>In conclusion, this article shows that a strong data story requires
+both accurate data and careful design. By rethinking how information is
+structured and presented, even well-established visualizations can
+become clearer and more engaging narratives, reinforcing the value of
+<strong>iterative design</strong> and the role of information
+visualization in making <strong>societal data meaningful and
+understandable</strong>.</p>
+</body>
+</html>
