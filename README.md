@@ -92,20 +92,6 @@ To address the limitations of the **detached legend**, each line is accompanied 
 
 Overall, the interactive redesign preserves data integrity while improving **clarity and usability**. Through **animation, direct labeling, and on-demand interaction**, the visualization becomes a more engaging and intuitive representation, making changes in mortality trends easier to understand through active reader engagement.
 
-<!-- Interactive visualization (HTML version only) -->
-<iframe 
-  src="eurostat_interactive.html"
-  width="100%"
-  height="725"
-  style="border:none;">
-</iframe>
-
-Figure 3: Interactive redesign of the Eurostat mortality visualization.  
-The figure shows the same dataset as Figure 1, enhanced with animation, direct labeling, and interactive tooltips.  
-*Note:*  
-*Full interactivity is available in the HTML version of this article.*  
-*For a better interactive experience, please adjust the reader interface to the appropriate size when using the interactive charts.*
-
 
 ---
 
