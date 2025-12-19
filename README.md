@@ -1,10 +1,3 @@
-
----
-title: "INFO 250 Project 2: Making Effective Visualization Using Critical Thinking"
-author: "Group 15"
-date: "2025-12-18"
----
-
 # 1. Introduction
 
 As societies across Europe continue to **age**, understanding how causes of death change over time has become increasingly important. Such information supports public health policy, healthcare planning, and discussions about the challenges of an aging population. However, data alone is not enough—the way information is **visualized** strongly influences how trends are understood and interpreted.
